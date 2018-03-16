@@ -1,65 +1,81 @@
 package com.emergya.pageObjects;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 
 import com.emergya.selenium.drivers.EmergyaWebDriver;
 import com.emergya.selenium.pageObject.BasePageObject;
 
 /**
  * A Page Object (PO) contain the behavior of a specific page in the application
- * EmergyaMainPage: This PO contain the methods to interact with the emergya main page
+ * EmergyaMainPage: This PO contain the methods to interact with the emergya
+ * main page
+ * 
  * @author Ivan Bermudez <ibermudez@emergya.com>
  * @author Jose Antonio Sanchez <jasanchez@emergya.com>
  * @author Ivan Gomez <igomez@emergya.com>
  */
 public class EmergyaMainPage extends BasePageObject {
 
-    /**
-     * Logger class initialization.
-     */
-    static Logger log = Logger.getLogger(GoogleMainPage.class);
+	/**
+	 * Logger class initialization.
+	 */
+	static Logger log = Logger.getLogger(GoogleMainPage.class);
 
-    /**
-     * Items keys selectors.
-     */
-    private static final String IMG_LOGO_EMERGYA = "imgLogoEmergya";
+	/**
+	 * Items keys selectors.
+	 */
+	private static final String IMG_LOGO_EMERGYA = "imgLogoEmergya";
+	private static final String NAVBAR_CONTACT_BUTTON = "navbarContactButton";
 
-    /**
-     * Constructor method
-     * @param driver selenium webdriver
-     */
-    public EmergyaMainPage(EmergyaWebDriver driver) {
-        super(driver);
-    }
+	/**
+	 * Constructor method
+	 * 
+	 * @param driver
+	 *            selenium webdriver
+	 */
+	public EmergyaMainPage(EmergyaWebDriver driver) {
+		super(driver);
+	}
 
-    /**
-     * Checks that the PO is ready
-     * @param pageObject page object to be used
-     */
-    @Override
-    public boolean isReady() {
-        log.info("[log-PageObjects] " + this.getClass().getSimpleName()
-                + " - Start isReady method");
+	/**
+	 * Checks that the PO is ready
+	 * 
+	 * @param pageObject
+	 *            page object to be used
+	 */
+	@Override
+	public boolean isReady() {
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - Start isReady method");
 
-        boolean status = this.isElementVisibleById(IMG_LOGO_EMERGYA);
+		boolean status = this.isElementVisibleById(IMG_LOGO_EMERGYA);
 
-        log.info("[log-PageObjects] " + this.getClass().getSimpleName()
-                + " - End isReady method");
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - End isReady method");
 
-        return status;
-    }
+		return status;
+	}
 
-    // Page object methods
-    /**
-     * Check if emergya logo is displayed
-     * @return
-     */
-    public boolean isEmergyaLogoDisplayed() {
-        log.info("[log-pageObjects]" + this.getClass().getSimpleName()
-                + "]- Start isEmergyaLogoDisplayed method");
-        log.info("[log-pageObjects]" + this.getClass().getSimpleName()
-                + "]- End isEmergyaLogoDisplayed method");
+	// Page object methods
+	/**
+	 * Check if emergya logo is displayed
+	 * 
+	 * @return
+	 */
+	public boolean isEmergyaLogoDisplayed() {
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- Start isEmergyaLogoDisplayed method");
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- End isEmergyaLogoDisplayed method");
 
-        return this.isElementVisibleById(IMG_LOGO_EMERGYA);
-    }
+		return this.isElementVisibleById(IMG_LOGO_EMERGYA);
+	}
+
+	public EmergyaContactPage clickOnNavbarContactButton() {
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- Start clickOnNavbarContactButton method");
+
+		driver.clickIfExists(By.xpath(this.getXPath(NAVBAR_CONTACT_BUTTON)));
+
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- End clickOnNavbarContactButton method");
+
+		return new EmergyaContactPage(driver);
+
+	}
 }
