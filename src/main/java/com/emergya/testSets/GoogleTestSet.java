@@ -2,8 +2,10 @@ package com.emergya.testSets;
 
 import static org.testng.AssertJUnit.assertTrue;
 
+import java.awt.AWTException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -15,6 +17,7 @@ import org.testng.annotations.Test;
 
 import com.emergya.pageObjects.EmergyaMainPage;
 import com.emergya.pageObjects.GoogleMainPage;
+import com.emergya.pageObjects.ImgbbMainPage;
 import com.emergya.utils.BasicTestSet;
 
 /**
@@ -140,9 +143,6 @@ public class GoogleTestSet extends BasicTestSet {
 			emergyaContactPage = emergyaMainPage.clickOnNavbarContactButton();
 			assertTrue("Contact Page not ready", emergyaContactPage.isReady());
 
-			// TODO: Remove the following line when you complete the test
-			// assertTrue("Developing test", false);
-
 			// Check that Sevilla address is displayed
 			assertTrue("Sevilla Adress not displayed", emergyaContactPage.isSevillaAdressDisplayed());
 
@@ -153,9 +153,44 @@ public class GoogleTestSet extends BasicTestSet {
 			// Access to 'Trabaja con nosotros' page
 			emergyaTrabajaConNosotrosPage = emergyaContactPage.clickOnTrabajaConNosotrosPage();
 
-			Thread.sleep(15000);
-			//driver.wait(10);
-			// Check 'Ofertas de trabajo' title
+			// Check 'Ofertas de trabajo' title and wait 0.5s
+			assertTrue("'Ofertas de trabajo' title not displayed", emergyaTrabajaConNosotrosPage.isReady());
+			Thread.sleep(500);
+
+			// Refresh the page and go back twice to Main Page
+			// Go back twice to Main page
+			driver.navigate().refresh();
+			Thread.sleep(500);
+			driver.navigate().back();
+			Thread.sleep(500);
+			driver.navigate().back();
+			Thread.sleep(500);
+
+			// Accept cookies popup if are displayed (using css selector), wait 2 seconds,
+			// and try to accept it again
+			emergyaMainPage.acceptCookies();
+			Thread.sleep(2000);
+
+			emergyaMainPage.acceptCookies();
+			Thread.sleep(2000);
+
+			// Check and print on log.info if the url of the page is the english Url, the
+			// spanish, or the chilen one
+
+			emergyaMainPage.checkAndPrintLanguageByUrl();
+
+			/**
+			 * Scrolling with EmergyaWebDriver Methods + Javascript
+			 */
+
+			//
+			emergyaMainPage.usingScrolling();
+
+			/**
+			 * USING MOUSE
+			 */
+
+			emergyaMainPage.usingMouse();
 
 		} catch (Exception e) {
 			log.error(e);
@@ -165,6 +200,33 @@ public class GoogleTestSet extends BasicTestSet {
 		}
 
 		log.info("[log-TestSet] " + this.getClass().getName() + " - End test method: " + method.getName());
+	}
+
+	@Test(description = "uploadAnImage")
+	public void uploadAnImage(Method method) throws InterruptedException, AWTException {
+
+		log.info("[log-TestSet] " + this.getClass().getName() + " - Start test method: " + method.getName());
+
+		// Variable declaration and definition
+		driver.navigate().to("https://imgbb.com/upload");
+
+		// Checking if is the Page is Ready
+		isReady(imgbbMainPage = new ImgbbMainPage(driver));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		// Click on the Upload Button
+		assertTrue("Error clicking on UploadLogoButton", imgbbMainPage.clickOnUploadLogoButton());
+		Thread.sleep(1000);
+
+		// Select the file through the robot
+		imgbbMainPage.uploadTheFileByRobot("imageTest.png");
+		Thread.sleep(1000);
+
+		// Click on the Upload button wich appears if a correct file
+		imgbbMainPage.clickOnUpload();
+		Thread.sleep(5000);
+
+		log.info("[log-TestSet] " + this.getClass().getName() + " - End test method: " + method.getName());
+
 	}
 
 	// ************************ Methods *************************

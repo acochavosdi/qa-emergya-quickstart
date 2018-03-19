@@ -31,7 +31,7 @@ public class EmergyaTrabajaConNosotrosPage extends BasePageObject {
 
 		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - Start isReady method");
 
-		boolean status = this.isElementVisibleById(H1_OF_EMERGYA_TRABAJA_CON_NOSOTROS);
+		boolean status = this.isElementVisibleByXPath(H1_OF_EMERGYA_TRABAJA_CON_NOSOTROS);
 
 		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - End isReady method");
 

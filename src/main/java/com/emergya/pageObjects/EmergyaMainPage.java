@@ -2,6 +2,7 @@ package com.emergya.pageObjects;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import com.emergya.selenium.drivers.EmergyaWebDriver;
 import com.emergya.selenium.pageObject.BasePageObject;
@@ -27,6 +28,7 @@ public class EmergyaMainPage extends BasePageObject {
 	 */
 	private static final String IMG_LOGO_EMERGYA = "imgLogoEmergya";
 	private static final String NAVBAR_CONTACT_BUTTON = "navbarContactButton";
+	private static final String BLOCK_HOME_FEATURED = "blockHomeFeatured";
 
 	/**
 	 * Constructor method
@@ -76,6 +78,82 @@ public class EmergyaMainPage extends BasePageObject {
 		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- End clickOnNavbarContactButton method");
 
 		return new EmergyaContactPage(driver);
+
+	}
+
+	public void acceptCookies() {
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- Start acceptCookies method");
+
+		String agreeButtonCssSelector = ".agree-button";
+
+		driver.waitUntilVisible(By.cssSelector(agreeButtonCssSelector), 2);
+		if (driver.isElementDisplayed(By.cssSelector(agreeButtonCssSelector))) {
+			log.info("Cookies Button found, lets press it");
+			driver.findElement(By.cssSelector(agreeButtonCssSelector)).click();
+		} else {
+			log.info("Cookiges Button not found, so i cant press it");
+		}
+		log.info("[log-pageObjects]" + this.getClass().getSimpleName() + "]- End acceptCookies method");
+
+	}
+
+	public void checkAndPrintLanguageByUrl() {
+
+		String url = driver.getCurrentUrl();
+
+		if (url.contains("/es"))
+			log.info("Spanish URL");
+		if (url.contains("/en"))
+			log.info("English URL");
+		if (url.contains("/cl"))
+			log.info("Chile URL");
+	}
+
+	public void usingScrolling() throws InterruptedException {
+
+		// Scroll to Bottom
+		this.scrollBottom();
+		Thread.sleep(1500);
+
+		// Scroll to Top
+		this.scrollTop();
+		Thread.sleep(1500);
+
+		// Scroll top a WebElement
+		this.scrollTo(this.getElementById(BLOCK_HOME_FEATURED));
+		Thread.sleep(1500);
+
+		// Scroll with Javascript
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		
+		
+		jse.executeScript("window.scrollBy(0,250)", "");
+		Thread.sleep(1500);
+
+		// Scroll to Bottom
+		this.scrollBottom();
+		Thread.sleep(1500);
+
+		jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(1500);
+
+		this.scrollTop();
+		Thread.sleep(1500);
+	}
+
+	public void usingMouse() throws InterruptedException {
+
+		driver.moveMouseOverElement(By.xpath(getXPath(NAVBAR_CONTACT_BUTTON)));
+		Thread.sleep(1500);
+
+		driver.moveMouseOutElement(By.xpath(getXPath(NAVBAR_CONTACT_BUTTON)));
+		Thread.sleep(1500);
+
+		driver.clickOnWithMouse(By.xpath(getXPath(NAVBAR_CONTACT_BUTTON)));
+		Thread.sleep(1500);
+
+		driver.clickOutWithMouse(By.xpath(getXPath(NAVBAR_CONTACT_BUTTON)));
+		Thread.sleep(1500);
 
 	}
 }

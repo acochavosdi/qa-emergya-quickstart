@@ -4,6 +4,7 @@ import com.emergya.pageObjects.EmergyaContactPage;
 import com.emergya.pageObjects.EmergyaMainPage;
 import com.emergya.pageObjects.EmergyaTrabajaConNosotrosPage;
 import com.emergya.pageObjects.GoogleMainPage;
+import com.emergya.pageObjects.ImgbbMainPage;
 import com.emergya.selenium.testSet.DefaultTestSet;
 
 /**
@@ -16,4 +17,5 @@ public abstract class BasicTestSet extends DefaultTestSet {
 	protected EmergyaMainPage emergyaMainPage;
 	protected EmergyaContactPage emergyaContactPage;
 	protected EmergyaTrabajaConNosotrosPage emergyaTrabajaConNosotrosPage;
+	protected ImgbbMainPage imgbbMainPage;
 }

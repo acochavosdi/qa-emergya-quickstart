@@ -11,3 +11,54 @@ Session ID: 7d5f337a-a092-4f1f-9f02-1f19690b8c78
 2018-03-16 11:12:48 ERROR BasePageObject:116 - Trying to retrieve from selectors/emergyacontactpage.properties file the item with the key buttonTrabajaConNostrosSecondMenu but buttonTrabajaConNostrosSecondMenu.type and/or buttonTrabajaConNostrosSecondMenu.id are missing!
 2018-03-16 11:12:48 ERROR GoogleTestSet:160 - java.lang.IllegalMonitorStateException
 2018-03-16 11:14:34 ERROR GoogleTestSet:160 - java.lang.IllegalMonitorStateException
+2018-03-16 12:14:40 ERROR BasePageObject:116 - Trying to retrieve from selectors/emergyatrabajaconnosotrospage.properties file the item with the key h1TitleWorkWithUs but h1TitleWorkWithUs.type and/or h1TitleWorkWithUs.id are missing!
+2018-03-16 12:15:58 ERROR BasePageObject:116 - Trying to retrieve from selectors/emergyatrabajaconnosotrospage.properties file the item with the key h1TitleWorkWithUs but h1TitleWorkWithUs.type and/or h1TitleWorkWithUs.id are missing!
+2018-03-16 12:17:17 ERROR BasePageObject:246 - Trying to retrieve from selectors/emergyatrabajaconnosotrospage.properties file the item with the key h1TitleWorkWithUs but h1TitleWorkWithUs.xpath is missing!
+2018-03-16 12:19:49 ERROR BasePageObject:246 - Trying to retrieve from selectors/emergyatrabajaconnosotrospage.properties file the item with the key h1TitleWorkWithUs but h1TitleWorkWithUs.xpath is missing!
+2018-03-16 12:31:57 ERROR GoogleTestSet:170 - org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'ws-acosanchez', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-041500-generic', java.version: '1.8.0_161'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fdf46ead-9389-44b5-b22c-eb865081cfb9
+2018-03-16 12:33:16 ERROR GoogleTestSet:173 - org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 10 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'ws-acosanchez', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-041500-generic', java.version: '1.8.0_161'
+Driver info: com.emergya.selenium.drivers.EmergyaFirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 60dd8b58-2e7d-4f56-8316-bf4d15dfe89e
+2018-03-16 12:35:00 ERROR GoogleTestSet:173 - java.lang.IllegalArgumentException: Cannot find elements when the XPath expression is null.
+2018-03-16 12:36:57 ERROR GoogleTestSet:172 - java.lang.IllegalArgumentException: Cannot find elements when the XPath expression is null.
+2018-03-16 12:46:45 ERROR GoogleTestSet:172 - org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 12 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'ws-acosanchez', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-041500-generic', java.version: '1.8.0_161'
+Driver info: com.emergya.selenium.drivers.EmergyaFirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5bd7fa88-7354-4d09-a3f7-c76d725cad71
+2018-03-16 12:49:33 ERROR GoogleTestSet:172 - org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 10 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'ws-acosanchez', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-041500-generic', java.version: '1.8.0_161'
+Driver info: com.emergya.selenium.drivers.EmergyaFirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.1, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 87dcee54-eb96-4c1b-8f98-72065d511376
+2018-03-16 12:52:26 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //h1[(@class='page-title') and contains(text(),'Ofertas')] is missing in the DOM. Waiting time: 20 seconds
+2018-03-16 13:31:28 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 13:53:36 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 14:13:44 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 14:15:00 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 14:18:53 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 14:20:57 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //h1[(@class='page-title') and contains(text(),'Ofertas')] is missing in the DOM. Waiting time: 20 seconds
+2018-03-16 14:22:09 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 10 seconds
+2018-03-16 14:30:03 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-16 14:31:11 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-16 14:32:16 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-16 14:34:04 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-16 14:44:12 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-19 08:20:35 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-19 08:36:29 ERROR BasePageObject:116 - Trying to retrieve from selectors/imgbbmainpage.properties file the item with the key logomainpage but logomainpage.type and/or logomainpage.id are missing!
+2018-03-19 08:38:08 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 08:40:22 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 08:42:18 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds

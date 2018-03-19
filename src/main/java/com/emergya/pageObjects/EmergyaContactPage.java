@@ -1,6 +1,7 @@
 package com.emergya.pageObjects;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 
 import com.emergya.selenium.drivers.EmergyaWebDriver;
 import com.emergya.selenium.pageObject.BasePageObject;
@@ -63,10 +64,12 @@ public class EmergyaContactPage extends BasePageObject {
 
 	public EmergyaTrabajaConNosotrosPage clickOnTrabajaConNosotrosPage() {
 
+		driver.waitUntilVisible(By.xpath(this.getXPath(LINK_TRABAJA_CON_NOSOTROS_SECUNDARY_MENU_SLIDING)), 10);
 		if (this.isElementVisibleByXPath(LINK_TRABAJA_CON_NOSOTROS_SECUNDARY_MENU_SLIDING, 10))
 			this.getElementByXPath(LINK_TRABAJA_CON_NOSOTROS_SECUNDARY_MENU_SLIDING).click();
 
 		return new EmergyaTrabajaConNosotrosPage(driver);
 
 	}
+
 }
