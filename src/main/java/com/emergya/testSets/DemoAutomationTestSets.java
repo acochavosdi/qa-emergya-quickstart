@@ -1,8 +1,8 @@
 package com.emergya.testSets;
 
-import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.awt.AWTException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.emergya.pageObjects.DemoAutomationTestingAlertsPage;
 import com.emergya.pageObjects.DemoAutomationTestingMainPage;
 import com.emergya.pageObjects.DemoAutomationTestingRegisterPage;
 import com.emergya.utils.BasicTestSet;
@@ -34,8 +35,18 @@ public class DemoAutomationTestSets extends BasicTestSet {
 	private static final String URL_INDEX = "http://demo.automationtesting.in/Index.html";
 	private static final String URL_REGISTER = "http://demo.automationtesting.in/Register.html";
 	private static final String URL_WEBTABLE = "http://demo.automationtesting.in/WebTable.html";
-	private static final String JSON_USER_PATH = "src/main/resources/files/json/register.json";
+	private static final String URL_ALERTS = "http://demo.automationtesting.in/Alerts.html";
 
+	// REGISTER TEST
+	private static final String JSON_USER_PATH = "src/main/resources/files/json/register.json";
+	private static final String IMAGE_TO_UPLOAD = "imageTest.png";
+
+	// ALERTS TEST
+	private static final String MESSAGE_TO_ALERT_WITH_TEXT_BOX = "Hi Mr.Alert TxtBox";
+
+	/*
+	 * CONSTRUCTOR
+	 */
 	public DemoAutomationTestSets() {
 		super();
 	}
@@ -131,11 +142,13 @@ public class DemoAutomationTestSets extends BasicTestSet {
 	 * @param method
 	 * @throws InterruptedException
 	 * @throws FileNotFoundException
+	 * @throws AWTException
 	 * 
 	 */
 
 	@Test(description = "checkingRegisterPageWithJson")
-	public void checkingRegisterPageWithJson(Method method) throws InterruptedException, FileNotFoundException {
+	public void checkingRegisterPageWithJson(Method method)
+			throws InterruptedException, FileNotFoundException, AWTException {
 
 		log.info("[log-TestSet] " + this.getClass().getName() + " - Start checkingRegisterPage test method: "
 				+ method.getName());
@@ -158,6 +171,10 @@ public class DemoAutomationTestSets extends BasicTestSet {
 		assertTrue(demoAutomationTestingRegisterPage.checkIfNameIsEmpty(),
 				"Refresh button didn't worked, name still not empty");
 
+		// TESTING UPLOAD IMAGE
+		assertTrue(demoAutomationTestingRegisterPage.uploadImage(IMAGE_TO_UPLOAD), "Error uploading the image");
+
+		// TESTING THE FORM
 		assertTrue(demoAutomationTestingRegisterPage.putNameOnForm(user.getName()), "Error inserting name");
 		assertTrue(demoAutomationTestingRegisterPage.putLastNameOnForm(user.getLastName()),
 				"Error inserting lastname ");
@@ -186,13 +203,15 @@ public class DemoAutomationTestSets extends BasicTestSet {
 		// Submit and test if register was OK
 
 		demoAutomationTestingWebtablePage = demoAutomationTestingRegisterPage.submitRegisterForm();
-		assertNotEquals(demoAutomationTestingMainPage, null,
-				"Couldnt Reach the WebTable Page, so something is wrong on the form when fill the form and submit'");
-		assertTrue(demoAutomationTestingWebtablePage.isReady(), "WebTable Page Reached, but not ready");
 
-		Thread.sleep(3000);
-		driver.navigate().back();
-		Thread.sleep(5000);
+		if (driver.getCurrentUrl() != URL_WEBTABLE) {
+			demoAutomationTestingRegisterPage.checkErrorLabels();
+			assertTrue(false,
+					"Couldnt Reach the WebTable Page, so something is wrong on the form when fill the form and submit'");
+		} else {
+			assertTrue(demoAutomationTestingWebtablePage.isReady(), "WebTable Page Reached, but not ready");
+			driver.navigate().back();
+		}
 
 		log.info("[log-TestSet] " + this.getClass().getName() + " - End checkingRegisterPage test method: "
 				+ method.getName());
@@ -206,4 +225,43 @@ public class DemoAutomationTestSets extends BasicTestSet {
 		 * SUBMITWITHOUT NAME TO GET THE POPUP
 		 */
 	}
+
+	@Test(description = "checkingSwitchToPage")
+	public void checkingSwitchToPage(Method method) throws InterruptedException {
+
+		log.info("[log-TestSet] " + this.getClass().getName() + " - Start checkingRegisterPage test method: "
+				+ method.getName());
+
+		// GO TO THE PAGE WE WANT TO TEST
+
+		driver.navigate().to(URL_ALERTS);
+
+		// CHECK IF THE PAGE IS READY
+
+		isReady(demoAutomationTestingAlertsPage = new DemoAutomationTestingAlertsPage(driver));
+
+		// TESTING ALERT WITH TEXT
+
+		demoAutomationTestingAlertsPage.clickOnAlertWithTextBox();
+		demoAutomationTestingAlertsPage.clickOnAlertWithTextBoxButtonToDisplay(MESSAGE_TO_ALERT_WITH_TEXT_BOX);
+
+		// TESTING ALERT WITH OK
+
+		demoAutomationTestingAlertsPage.clickOnAlertWithOk();
+		demoAutomationTestingAlertsPage.clickOnAlertWithOkButtonToDisplay();
+
+		// TESTING ALERT WITH OK AND CANCEL
+
+		demoAutomationTestingAlertsPage.clickOnAlertWithOkAndCancel();
+		demoAutomationTestingAlertsPage.clickOnAlertWithOkButtonToDisplay("cancel");
+		Thread.sleep(3000);
+		demoAutomationTestingAlertsPage.clickOnAlertWithOkButtonToDisplay("ok");
+
+		Thread.sleep(3000);
+
+		log.info("[log-TestSet] " + this.getClass().getName() + " - End checkingRegisterPage test method: "
+				+ method.getName());
+
+	}
+
 }

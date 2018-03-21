@@ -3,6 +3,7 @@ package com.emergya.utils;
 import com.emergya.pageObjects.DemoAutomationTestingMainPage;
 import com.emergya.pageObjects.DemoAutomationTestingRegisterPage;
 import com.emergya.pageObjects.DemoAutomationTestingSignInPage;
+import com.emergya.pageObjects.DemoAutomationTestingAlertsPage;
 import com.emergya.pageObjects.DemoAutomationTestingWebtablePage;
 import com.emergya.pageObjects.EmergyaContactPage;
 import com.emergya.pageObjects.EmergyaMainPage;
@@ -34,4 +35,5 @@ public abstract class BasicTestSet extends DefaultTestSet {
 	protected DemoAutomationTestingSignInPage demoAutomationTestingSignInPage;
 	protected DemoAutomationTestingRegisterPage demoAutomationTestingRegisterPage;
 	protected DemoAutomationTestingWebtablePage demoAutomationTestingWebtablePage;
+	protected DemoAutomationTestingAlertsPage demoAutomationTestingAlertsPage;
 }

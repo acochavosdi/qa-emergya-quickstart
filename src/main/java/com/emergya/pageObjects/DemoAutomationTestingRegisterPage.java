@@ -1,5 +1,11 @@
 package com.emergya.pageObjects;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -74,6 +80,12 @@ public class DemoAutomationTestingRegisterPage extends BasePageObject {
 
 	// UPLOAD IMAGE
 	private static final String UPLOAD_IMAGE_ID = "uploadImageID";
+
+	// ERROR LABELS
+
+	private static final String ERROR_LABEL_CONTAINER_XPATH = "errorLabelContainerXPATH";
+	private static final String EMAIL_EXISTS_CONTAINER_XPATH = "errorEmailExistsXPATH";
+	private static final String PHONE_EXISTS_CONTAINER_XPATH = "errorPhoneExistsXPATH";
 
 	private static final String SELECT_COUNTRY_SPAN_XPATH = "SelectCountrySpanSelectorXPATH";
 	private static final String SELECT_COUNTRY_TEXT_ENTRY_XPATH = "SelectCountryTextEntryInputXPATH";
@@ -540,6 +552,94 @@ public class DemoAutomationTestingRegisterPage extends BasePageObject {
 		}
 
 		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - End checkPopup method");
+		return status;
+	}
+
+	public boolean uploadImage(String imageFile) throws AWTException {
+		boolean status = false;
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - Start uploadImage method");
+
+		// Click On Upload Button
+		if (this.isElementVisibleById(UPLOAD_IMAGE_ID)) {
+			this.getElementById(UPLOAD_IMAGE_ID).click();
+
+			// Prepare file
+			File auxfile = new File("src/main/resources/files/" + imageFile);
+			String fileName = auxfile.getAbsolutePath();
+
+			// Use the robot to perform the steps
+			try {
+				// Setting clipboard with file location
+				setClipboardData(fileName);
+				// native key strokes for CTRL, V and ENTER keys
+				// Some sleep time to detect the window popup
+				Thread.sleep(500);
+
+				Robot robot = new Robot();
+
+				// Delete the default string
+				robot.keyPress(KeyEvent.VK_SHIFT);
+				robot.keyPress(KeyEvent.VK_END);
+				robot.keyRelease(KeyEvent.VK_SHIFT);
+				robot.keyRelease(KeyEvent.VK_END);
+				robot.keyPress(KeyEvent.VK_BACK_SPACE);
+				robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+
+				// Copy the path to the window popup
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+				Thread.sleep(1000);
+
+				// Press enter to execute a file search
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				robot.delay(500);
+
+				Thread.sleep(1000);
+
+				status = true;
+			} catch (Exception e) {
+				log.error("Exception when using robot on uploadTheFileByRobot method");
+			}
+		}
+
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - End uploadImage method");
+		return status;
+	}
+
+	/**
+	 * This method will set any parameter string to the system's clipboard.
+	 */
+	public static void setClipboardData(String string) {
+
+		// StringSelection is a class that can be used for copy and paste operations.
+		StringSelection stringSelection = new StringSelection(string);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+
+	}
+
+	public boolean checkErrorLabels() {
+		boolean status = false;
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - Start checkErrorLabels method");
+
+		if (this.isElementVisibleByXPath(ERROR_LABEL_CONTAINER_XPATH)) {
+
+			if (this.isElementVisibleByXPath(EMAIL_EXISTS_CONTAINER_XPATH)) {
+				log.warn("The content of the web app warning is; "
+						+ this.getElementByXPath(EMAIL_EXISTS_CONTAINER_XPATH).getText());
+				status = true;
+			}
+
+			if (this.isElementVisibleByXPath(PHONE_EXISTS_CONTAINER_XPATH)) {
+				log.warn("The content of the web app warning is; "
+						+ this.getElementByXPath(PHONE_EXISTS_CONTAINER_XPATH).getText());
+				status = true;
+			}
+
+		}
+		log.info("[log-PageObjects] " + this.getClass().getSimpleName() + " - End checkErrorLabels method");
 		return status;
 	}
 

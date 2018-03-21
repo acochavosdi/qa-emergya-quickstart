@@ -154,3 +154,10 @@ Session ID: 87dcee54-eb96-4c1b-8f98-72065d511376
 2018-03-20 17:31:16 ERROR DemoAutomationTestingRegisterPage:311 - Language not found
 2018-03-21 08:33:17 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
 2018-03-21 08:33:17 ERROR DemoAutomationTestingRegisterPage:311 - Language not found
+2018-03-21 10:09:50 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@class='ui-grid-contents-wrapper'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-21 10:17:10 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@ng-if='EmailExists'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-21 10:19:33 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@ng-if='EmailExists'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-21 10:22:50 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@ng-if='EmailExists'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-21 10:25:01 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@ng-if='EmailExists'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-21 11:40:08 ERROR BasePageObject:246 - Trying to retrieve from selectors/demoautomationtestingalertspage.properties file the item with the key uniqueContainerSwitchToPageXPATH but uniqueContainerSwitchToPageXPATH.xpath is missing!
+2018-03-21 12:41:32 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@ng-if='EmailExists'] is missing in the DOM. Waiting time: 20 seconds
