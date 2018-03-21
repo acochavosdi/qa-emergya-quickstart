@@ -62,3 +62,95 @@ Session ID: 87dcee54-eb96-4c1b-8f98-72065d511376
 2018-03-19 08:38:08 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds
 2018-03-19 08:40:22 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds
 2018-03-19 08:42:18 ERROR EmergyaWebDriverUtil:472 - The element: By.id: anywhere-upload is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 14:32:50 ERROR DemoAutomationTestingRegisterPage:54 - 
+2018-03-19 14:35:07 ERROR DemoAutomationTestingRegisterPage:54 - me@me.com
+2018-03-19 14:35:07 ERROR DemoAutomationTestingRegisterPage:55 - me@me.com
+2018-03-19 16:37:42 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //input[@ng-model=FirstName] is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 16:38:02 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //input[@ng-model=LastName] is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 16:38:23 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //textarea[@ng-model=Adress] is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 16:38:43 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //input[@ng-model=phone] is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 16:40:27 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //input[@ng-model='phone'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-19 16:55:55 ERROR EmergyaWebDriverUtil:505 - The element: By.cssSelector: .agree-button is not visible in the page. Waiting time: 2 seconds
+2018-03-19 17:24:05 ERROR EmergyaWebDriverUtil:538 - The element: By.id: //option[@value='Unix'] is not clickable. Waiting time: 2 seconds
+2018-03-19 17:43:23 ERROR EmergyaWebDriverUtil:472 - The element: By.id: monthbox is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 08:38:56 ERROR EmergyaWebDriverUtil:472 - The element: By.id: monthbox is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 08:41:19 ERROR EmergyaWebDriverUtil:472 - The element: By.id: monthbox is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 08:57:34 ERROR EmergyaWebDriverUtil:538 - The element: By.xpath: //a[text()='Spanish'] is not clickable. Waiting time: 2 seconds
+2018-03-20 08:57:54 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //a[text()='Spanish'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 09:01:45 ERROR EmergyaWebDriverUtil:472 - The element: By.id: monthbox is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 09:13:51 ERROR EmergyaWebDriverUtil:538 - The element: By.xpath: //a[text()='Spanish'] is not clickable. Waiting time: 2 seconds
+2018-03-20 09:14:11 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //a[text()='Spanish'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 09:22:15 ERROR BasePageObject:116 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item with the key languagesSelectorXPATH but languagesSelectorXPATH.type and/or languagesSelectorXPATH.id are missing!
+2018-03-20 09:26:47 ERROR BasePageObject:116 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item with the key languagesSelectorXPATH but languagesSelectorXPATH.type and/or languagesSelectorXPATH.id are missing!
+2018-03-20 09:28:48 ERROR BasePageObject:116 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item with the key languagesSelectorXPATH but languagesSelectorXPATH.type and/or languagesSelectorXPATH.id are missing!
+2018-03-20 09:50:08 ERROR BasePageObject:116 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item with the key SelectCountrySpanSelectorXPATH but SelectCountrySpanSelectorXPATH.type and/or SelectCountrySpanSelectorXPATH.id are missing!
+2018-03-20 09:51:33 ERROR BasePageObject:246 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item with the key SelectCountrySpanSelectorXPATH but SelectCountrySpanSelectorXPATH.xpath is missing!
+2018-03-20 09:55:15 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //a[text()='Spanish'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 11:29:17 ERROR DemoAutomationTestSets:177 - UserBean [name=Carlos, lastName=Garcia, adress=Calle Falsa 123, phone=1234567891]
+2018-03-20 11:29:17 ERROR DemoAutomationTestSets:178 - UserBean [name=Carlos, lastName=Garcia, adress=Calle Falsa 123, phone=1234567891]
+2018-03-20 11:29:17 ERROR DemoAutomationTestSets:179 - Carlos
+2018-03-20 11:33:46 ERROR DemoAutomationTestSets:186 - UserBean [name=Carlos, lastName=Garcia, adress=Calle Falsa 123, phone=1234567891]
+2018-03-20 11:37:59 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@273cb729
+2018-03-20 11:55:52 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@16ea56ab
+2018-03-20 11:56:55 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@18f6ee8d
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@6fb8cfa7
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:179 - [Ljava.lang.String;@16486ab3
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:180 - 3
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:181 - Cricket
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:182 - Movies
+2018-03-20 12:04:09 ERROR DemoAutomationTestSets:183 - Hockey
+2018-03-20 12:10:50 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@3b9d5218
+2018-03-20 12:11:48 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@5a318745
+2018-03-20 12:26:27 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@5a318745
+2018-03-20 12:31:30 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@327fd5c9
+2018-03-20 12:31:39 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 12:31:59 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //a[text()='Spanish'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 12:32:42 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@1b13e4fb
+2018-03-20 12:36:16 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@1b13e4fb
+2018-03-20 12:46:33 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@5cb6fac3
+2018-03-20 13:27:05 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@70a9f4b7
+2018-03-20 13:36:28 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@340b7fca
+2018-03-20 13:53:08 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@7dbf92aa
+2018-03-20 13:53:29 ERROR BasePageObject:279 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item(s) with the key highlightedResultList but highlightedResultList.xpath is missing!
+2018-03-20 13:58:57 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@4e92c6c2
+2018-03-20 13:59:18 ERROR BasePageObject:279 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item(s) with the key highlightedResultList but highlightedResultList.xpath is missing!
+2018-03-20 14:02:20 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@194feb27
+2018-03-20 14:02:40 ERROR BasePageObject:279 - Trying to retrieve from selectors/demoautomationtestingregisterpage.properties file the item(s) with the key highlightedResultList but highlightedResultList.xpath is missing!
+2018-03-20 14:03:27 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@6a339bc1
+2018-03-20 14:04:51 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@7c1a5092
+2018-03-20 14:08:25 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@3df920
+2018-03-20 14:17:35 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //a[text()='Spanish'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 14:18:02 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@66032b8d
+2018-03-20 14:19:39 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@1d4ee7d7
+2018-03-20 14:22:27 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@1e8f20bf
+2018-03-20 14:27:31 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@70a9f4b7
+2018-03-20 14:29:35 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@488bf7cd
+2018-03-20 14:33:46 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@70a9f4b7
+2018-03-20 14:33:56 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 14:34:08 ERROR DemoAutomationTestingRegisterPage:394 - false
+2018-03-20 14:38:23 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@7dbf92aa
+2018-03-20 14:38:43 ERROR DemoAutomationTestingRegisterPage:395 - El if es false
+2018-03-20 14:42:08 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@2a58d00a
+2018-03-20 14:42:27 ERROR DemoAutomationTestingRegisterPage:403 - El if es false
+2018-03-20 14:49:10 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@70a9f4b7
+2018-03-20 15:57:59 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@70a9f4b7
+2018-03-20 16:02:25 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@66032b8d
+2018-03-20 16:11:58 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@7c1a5092
+2018-03-20 16:14:37 ERROR DemoAutomationTestSets:178 - com.emergya.utils.UserBean@2a58d00a
+2018-03-20 16:14:38 ERROR DemoAutomationTestingRegisterPage:403 - HE ENTRADO EN LA COSA ESTA11212
+2018-03-20 16:18:43 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 16:19:00 ERROR DemoAutomationTestingRegisterPage:403 - HE ENTRADO EN LA COSA ESTA11212
+2018-03-20 16:21:03 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 16:26:36 ERROR DemoAutomationTestingRegisterPage:317 - Language not found
+2018-03-20 16:31:17 ERROR DemoAutomationTestingRegisterPage:310 - Language not found
+2018-03-20 16:33:58 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 16:33:58 ERROR DemoAutomationTestingRegisterPage:310 - Language not found
+2018-03-20 16:38:05 ERROR DemoAutomationTestingRegisterPage:310 - Language not found
+2018-03-20 16:40:30 ERROR DemoAutomationTestingRegisterPage:310 - Language not found
+2018-03-20 17:16:10 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //div[@class='ui-grid-contents-wrapper'] is missing in the DOM. Waiting time: 20 seconds
+2018-03-20 17:19:58 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 17:19:58 ERROR DemoAutomationTestingRegisterPage:311 - Language not found
+2018-03-20 17:31:16 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-20 17:31:16 ERROR DemoAutomationTestingRegisterPage:311 - Language not found
+2018-03-21 08:33:17 ERROR EmergyaWebDriverUtil:472 - The element: By.xpath: //ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all']/li/a is missing in the DOM. Waiting time: 5 seconds
+2018-03-21 08:33:17 ERROR DemoAutomationTestingRegisterPage:311 - Language not found
